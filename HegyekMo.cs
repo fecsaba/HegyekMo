@@ -22,10 +22,9 @@ namespace HegyekMo
             }
             
         }
-        static string SzámKufircolás(double vesszősSzám)
+        static string SzámKufircolás(double vesszősSzám, string formátum)
         {
-
-            string s= $"{vesszősSzám:F1}";
+            string s = string.Format("{0:__}", vesszősSzám).Replace("__", formátum);
             double t = double.Parse(s);
             return t.ToString(CultureInfo.InvariantCulture.NumberFormat);
         }
@@ -181,7 +180,7 @@ namespace HegyekMo
             rögzít.Add( "Hegycsúcs neve;Magasság láb");
             foreach (var i in cs)
             {
-                magasságPonttal = SzámKufircolás(i.MagasságLábban);
+                magasságPonttal = SzámKufircolás(i.MagasságLábban, "F1");
                 if (i.Hegység == "Bükk-vidék")
                 {
                     rögzít.Add( $"{i.HegycsúcsNeve};{magasságPonttal}");
