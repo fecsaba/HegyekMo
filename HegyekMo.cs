@@ -22,9 +22,10 @@ namespace HegyekMo
             }
             
         }
+        
         static string SzámKufircolás(double vesszősSzám, string formátum)
         {
-            string s = string.Format("{0:__}", vesszősSzám).Replace("__", formátum);
+            string s = vesszősSzám.ToString("#.#");
             double t = double.Parse(s);
             return t.ToString(CultureInfo.InvariantCulture.NumberFormat);
         }
