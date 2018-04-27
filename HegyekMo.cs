@@ -188,6 +188,11 @@ namespace HegyekMo
                 }
             }
             Kiír k = new Kiír(rögzít);
+            Ki(0, "Teszt");
+            foreach (var i in rögzít)
+            {
+                Ki(0, i);
+            }
 
             Console.ReadKey();
         }
